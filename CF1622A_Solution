@@ -1,0 +1,45 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Myclass {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        for(int p=0;p<a;p++) {
+            int x,y,z;
+            x=sc.nextInt();
+            y=sc.nextInt();
+            z=sc.nextInt();
+            int mn=x<y && x<z ? x : y<x && y<z ? y : z ;
+            boolean fl=false;
+            if(x==y || y==z || z==x) {
+                if (x == y) {
+                    if ((z % 2) == 1)
+                        fl = true;
+
+                }
+
+
+                    else if (y == z) {
+                        if (x % 2 == 1)
+                            fl = true;
+                    } else if (z == x) {
+                        if (y % 2 == 1)
+                            fl = true;
+                    }
+            }
+            else
+            {
+                if(x+y==z || y+z==x || z+x==y)
+                    fl=false;
+                else
+                    fl=true;
+            }
+            if(fl)
+                System.out.println("NO");
+            else System.out.println("YES");
+
+        }
+        }
+}
