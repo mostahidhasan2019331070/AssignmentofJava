@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Myclass {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+       int x=sc.nextInt();
+       int arr[] = new int[360+2];
+       int sum=0;
+       for(int i=0;i<=360;i++)
+       {
+           arr[i]=0;
+       }
+       arr[0]=1;
+       for(int i=0;i<x;i++)
+       {
+           int a;
+           a=sc.nextInt();
+           sum+=a;
+           sum%=360;
+           arr[sum]=1;
+
+       }
+       int mx=0,cut=0;
+       for(int i=0;i<=360;i++)
+       {
+           if(arr[i%360]==1)
+           {
+               mx=Math.max(cut,mx);
+               cut=0;
+           }
+           else
+               cut++;
+       }
+System.out.println(mx+1);
+
+
+    }
+}
