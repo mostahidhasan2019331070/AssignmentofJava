@@ -1,0 +1,23 @@
+    import java.util.Arrays;
+    import java.util.Scanner;
+     
+    public class Myclass {
+        public static void main(String[] args)
+        {
+            Scanner sc=new Scanner(System.in);
+            int a=sc.nextInt();
+            for(int p=0;p<a;p++)
+            {
+                int n;
+                n=sc.nextInt();
+                int arr[]=new int[n];
+                for(int x=0;x<n;x++)
+                {
+                    arr[x]=sc.nextInt();
+                }
+                Arrays.sort(arr);
+                System.out.println(arr[n-1]-arr[0]);
+            }
+     
+        }
+    }
